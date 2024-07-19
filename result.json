@@ -1,0 +1,60 @@
+{
+    "queryCost": 7,
+    "latitude": 50.8444,
+    "longitude": 4.35609,
+    "resolvedAddress": "Brussels, Belgium",
+    "address": "brussels",
+    "timezone": "Europe/Brussels",
+    "tzoffset": 2.0,
+    "days": [
+        {
+            "datetime": "2024-07-12",
+            "tempmax": 15.6,
+            "tempmin": 13.0,
+            "temp": 14.4,
+            "feelslike": 14.4
+        },
+        {
+            "datetime": "2024-07-13",
+            "tempmax": 17.9,
+            "tempmin": 11.6,
+            "temp": 14.7,
+            "feelslike": 14.7
+        },
+        {
+            "datetime": "2024-07-14",
+            "tempmax": 21.7,
+            "tempmin": 12.0,
+            "temp": 16.9,
+            "feelslike": 16.9
+        },
+        {
+            "datetime": "2024-07-15",
+            "tempmax": 25.1,
+            "tempmin": 12.8,
+            "temp": 19.0,
+            "feelslike": 19.0
+        },
+        {
+            "datetime": "2024-07-16",
+            "tempmax": 19.1,
+            "tempmin": 14.9,
+            "temp": 17.7,
+            "feelslike": 17.7
+        },
+        {
+            "datetime": "2024-07-17",
+            "tempmax": 22.9,
+            "tempmin": 15.2,
+            "temp": 18.9,
+            "feelslike": 18.9
+        },
+        {
+            "datetime": "2024-07-18",
+            "tempmax": 27.5,
+            "tempmin": 13.4,
+            "temp": 20.9,
+            "feelslike": 21.0
+        }
+    ]
+}

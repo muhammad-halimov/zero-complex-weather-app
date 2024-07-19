@@ -1,0 +1,21 @@
+{% extends "index.htm" %}
+{% block title %} Main {% endblock %}
+{% block content %}
+<div class="weather-container">
+    {% for weather in forecast %}
+        <div class="weather-day">
+            <p class="feels-like">{{ weather.5 }}</p>
+            <h2 class="day-name">{{ weather.0 }}</h2>
+            <div class="weather-icon">
+                <i class="fas fa-sun"></i>
+            </div>
+            <p class="temperature">
+                <span class="temp-avg">{{ weather.3 }}</span>°c
+                <span class="temp-max">{{ weather.1 }}</span>°c
+                <span class="temp-min">{{ weather.2 }}</span>°c
+            </p>
+            <p class="feels-like">Feels like: <span class="temp-feels">{{ weather.4 }}</span>°c</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
