@@ -3,6 +3,8 @@ Pillow~=10.4.0
 django-jazzmin
 
 requests~=2.32.3
-pip~=23.2.1
+pip~=23.3
 asgiref~=3.8.1
 sqlparse~=0.5.0
+
+selenium~=4.23.0

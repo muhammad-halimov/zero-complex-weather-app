@@ -30,19 +30,6 @@ def main(request):
         cities: list = list()
         return cities
 
-    # try:
-    #     with open('last_city.csv', 'r', encoding='utf-8') as file:
-    #         lines = file.readlines()
-    #         cities: list = list()
-    #
-    #         for line in lines:
-    #             city = line.strip('\n')
-    #             cities.append(city)
-    #
-    # except FileNotFoundError:
-    #     cities: list = list()
-    #     return cities
-
     coreutils.write_to_json(city)
     forecast = coreutils.read_from_json()
 
