@@ -1,14 +1,16 @@
-FROM python:3.12
+FROM python:3.12-alpine
+
+RUN apk update && apk add nano
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
-RUN mkdir /code
-WORKDIR /code
-RUN pip install --upgrade pip
-COPY requirements.txt /code/
 
-RUN pip install -r requirements.txt
-COPY . /code/
+WORKDIR /app
+
+COPY ./requirements.txt /app
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . /app
 
 EXPOSE 8000
 

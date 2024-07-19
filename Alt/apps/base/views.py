@@ -10,10 +10,43 @@ from django.contrib.auth import authenticate, login, logout
 
 def main(request):
     city = request.GET.get('city') if request.GET.get('city') else ''
+
+    try:
+        with open("last_city.csv", "a+", encoding="UTF8") as file:
+            file.write(f"{city}\n")
+
+        with open('last_city.csv', 'r', encoding='utf-8') as file:
+            lines = file.readlines()
+            cities: list = list()
+
+        for line in lines:
+            city = line.strip('\n')
+            cities.append(city)
+
+    except FileNotFoundError:
+        with open("last_city.csv", "w+", encoding="UTF8") as file:
+            file.write(f"{city}\n")
+
+        cities: list = list()
+        return cities
+
+    # try:
+    #     with open('last_city.csv', 'r', encoding='utf-8') as file:
+    #         lines = file.readlines()
+    #         cities: list = list()
+    #
+    #         for line in lines:
+    #             city = line.strip('\n')
+    #             cities.append(city)
+    #
+    # except FileNotFoundError:
+    #     cities: list = list()
+    #     return cities
+
     coreutils.write_to_json(city)
     forecast = coreutils.read_from_json()
 
-    context = {'city': city, 'forecast': forecast}
+    context = {'city': city, 'forecast': forecast, 'last_cities': cities}
     return render(request, 'base/main.htm', context=context)
 
 
@@ -40,7 +73,7 @@ def login_page(request):
 def registration_page(request):
     if request.user.is_authenticated:
         return redirect('main')
-    
+
     form = forms.UserCreationForm
 
     if request.method == 'POST':

@@ -4,7 +4,15 @@
     <form method="get" action="{% url 'main' %}" class="search-container">
         {% csrf_token %}
         <label for="search-input"></label>
-        <input type="text" placeholder="Enter a city" name="city" id="search-input">
+        <input type="text" placeholder="Enter a city" name="city" id="search-input" list="search-list">
+        <datalist id="search-list">
+            <label for="cities">Last checked cities</label>
+            <select id="cities">
+                {% for city in last_cities %}
+                    <option value="{{ city }}">{{ city }}</option>
+                {% endfor %}
+            </select>
+        </datalist>
         <button type="submit" id="search-btn"><i class="fas fa-search"></i></button>
     </form>
 </header>
