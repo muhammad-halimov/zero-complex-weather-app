@@ -1,4 +1,9 @@
 # Zero-Complex Weather App
+- App is dockerized (The instructions below can be skipped)
+- Last places are saved
+- Also, city hints and autofill
+
+In this project i used Django 5 and Python, russian Readme file also presented.
 
 # Installing & Running
 - Install python
